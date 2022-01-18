@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Create Simple Login Form Design In Bootstrap 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.0-rc.0/web3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    table,
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+<body>
+   
+    <div id="privatekey" class="container">
+        <div  class="row">
+            <div class="col-md-4 sm-12 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="#" method="" class="row g-3">
+                        <h4>Welcome To The prescription blockchain </h4>
+                        <div class="col-12">
+                            <label>private key</label>
+                            <input type="text" name="currentprivatekey" class="form-control" placeholder="private key">
+                        </div>
+                      
+                
+                        <div class="col-12">
+                            <button type="input" id="privatekeysubmit" class="btn btn-dark float-end">Login</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addpatient" class="container">
+        <div  class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="#" method="" class="row g-3">
+                        <h4>add a new Patient</h4>
+                        <div class="col-12">
+                            <label>patient address </label>
+                            <input type="text" id="patientaddress" class="form-control" placeholder="patient address">
+                        </div>
+                        <div class="col-12">
+                            <label>name </label>
+                            <input type="text" id="patientname" class="form-control" placeholder="patient name">
+                        </div>
+                        <div class="col-12">
+                            <label>cin </label>
+                            <input type="text" id="patientcin" class="form-control" placeholder="patient cin">
+                        </div>
+                        <div class="col-12">
+                            <label>disease name </label>
+                            <input type="text" id="patientdis" class="form-control" placeholder="disiese name ">
+                        </div>
+                        <div class="col-12">
+                            <button type="input"  id="addpatientbutton" class="btn btn-dark float-end">add Patient</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="getdoctorinfos" class="container">
+        <div  class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="#" method="" class="row g-3">
+                        <h4>get doctor infos</h4>
+                        <div class="col-12">
+                            <label>doctor address </label>
+                            <input type="text" id="getdoctorinfosaddress" class="form-control" placeholder="doctor address">
+                        </div>
+                        <div class="col-12">
+                            <button type="input" id="getdoctorinfobutton" class= "btn btn-success" id="getdoctorinfo" class="btn btn-dark float-end">get Doctor infos</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="getpatientinfos" class="container">
+        <div  class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="#" method="" class="row g-3">
+                        <h4>get patient infos</h4>
+                        <div class="col-12">
+                            <label>patient address </label>
+                            <input type="text" id="getpatientinfosaddress" class="form-control" placeholder="patient address">
+                        </div>
+                        <div class="col-12">
+                            <button type="input"  id="getpatientinfosbutton" class= "btn btn-success" id="getpatientinfos" class="btn btn-dark float-end">get Patient infos</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="createprescription" class="container">
+        <div  class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form action="#" method="" class="row g-3">
+                        <h4>add prescription</h4>
+                        <div class="col-12">
+                            <label>patient address </label>
+                            <input type="text" id="patientaddressfordrug" class="form-control" placeholder="patient address">
+                        </div>
+                        <div class="col-12">
+                            <label>drug id : </label>
+                            <input type="text" id="drugid" class="form-control" placeholder="drug id ">
+                        </div>
+                        <div class="col-12">
+                            <button type="input"  id="addprescriptionbutton" class= "btn btn-success" id="getpatientinfos" class="btn btn-dark float-end">add Prescription</button>
+                        </div>
+                    </form>
+                    <hr class="mt-4">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+<div class="row">
+    <h1 class="col-12">search result</h1>
+<div id="result" class="col-12">
+       
+    </div>
+
+</div>
+
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <div id="allPrescreptions" class="container">
+        <div  class="row">
+            <h1 class="col-12">all prescriptios</h1>
+            <div  id="inside_showall"class="col-12"></div> 
+        </div>
+    </div>
+    <script>
+
+
+        var web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/v3/ad7391adab65486380c1b7680fda20f3"));
+        const address = "0xE78EC89522b6Ad855F27c657C31644A108E41eC6";
+        const ABI = [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "doctor_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "patient_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "drug_id",
+                    "type": "string"
+                }
+            ],
+            "name": "addPrescriptionEvent",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "doctor_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "hospital_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "cin",
+                    "type": "string"
+                }
+            ],
+            "name": "addDoctor",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "patient_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "cin",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "malade_name",
+                    "type": "string"
+                }
+            ],
+            "name": "addPatient",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "patient_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "drug_id",
+                    "type": "string"
+                }
+            ],
+            "name": "addPrescription",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "doctors",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "doctor_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "hospital_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "cin",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isValid",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "doctor_address",
+                    "type": "address"
+                }
+            ],
+            "name": "getDoctor",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "doctor_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "hospital_name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "cin",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isValid",
+                            "type": "bool"
+                        }
+                    ],
+                    "internalType": "struct SimpleContract.Doctor",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "patient_address",
+                    "type": "address"
+                }
+            ],
+            "name": "getPatient",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "patient_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "cin",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "malade_name",
+                            "type": "string"
+                        }
+                    ],
+                    "internalType": "struct SimpleContract.Patient",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "patients",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "patient_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "cin",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "malade_name",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ];
+
+    // getting our contract 
+const contract1 = new web3.eth.Contract(ABI, address);
+
+// a private key 
+var privatekey = "0xea4a0eb91a71b60d403199c794532a93584b867f40aa7552f56ca16ddbc7b154";
+
+
+//contract1.methods.getDoctor("0xfdDb13c3B9366989d3a9ea8E9F841bffC01142eF").call().then(console.log);
+
+
+// adding a wallet to our web3
+const account = web3.eth.accounts.privateKeyToAccount(privatekey);
+web3.eth.accounts.wallet.add(account);
+web3.eth.defaultAccount = account.address;
+// adding a new doctor : 
+//contract1.methods.addDoctor("0x5f02aaf618ccd534cdb626678e5a67846ef32069", "google" , "aitishak" , "v324556").send({
+  //          from: this.web3.eth.defaultAccount,
+  //          gas: 3000000,
+  //  }).then(function(erreur , result){
+  //      console.log(erreur);
+ //   }); -->
+
+
+
+    // getting all the transactions 
+  contract1.getPastEvents('addPrescriptionEvent' , {//filter1 , 
+    fromBlock: 0,
+     toBlock: 'latest'} , function(erreur  , events){console.log(events)}).then(function(events){
+       console.log(events);
+       
+       var headers = '<table> <tr> <th>from doctor</th> <th>to patient</th> <th>drug title</th></tr>';
+        for(var i = 0 ; i < events.length; i++){
+            headers+=gatetable(events[i]["returnValues"]["doctor_address"] ,events[i]["returnValues"]["patient_address"] , events[i]["returnValues"]["drug_id"] );
+        }
+        headers+='</table>';
+
+        $("#inside_showall").html(headers);
+
+
+   });
+  // addDoctor("0x5f02aaf618ccd534cdb626678e5a67846ef32069" , "jaafar"  ,"zaid" , "v54645");
+
+     $("#privatekeysubmit").click(function(){
+        privatekey = $('#currentprivatekey').val();
+        console.log(privatekey);
+    }); 
+    $("#addpatientbutton").click(function(){
+            patientaddress = $('#patientaddress').val();
+            patientname = $('#patientname').val();
+            patientcin = $('#patientcin').val();
+            patientdis = $('#patientdis').val();
+            console.log(patientaddress);
+            addPatient(patientaddress , patientname , patientcin , patientdis);
+        }); 
+
+    $("#getdoctorinfobutton").click(function(){
+            doctoraddress = $('#getdoctorinfosaddress').val();
+            contract1.methods.getDoctor(doctoraddress).call().then(function(result){ 
+                
+                var code = '<table> <tr> <th>doctor address</th> <th>doctor name</th> <th>hospital name</th> <th>cin</th></tr> <tr> <td>'+result["doctor_address"]+'</td> <td>'+result["name"]+'</td> <td>'+result["hospital_name"]+'</td>  <td>'+result["cin"]+'</td></tr></table>' 
+                $("#result").html(code);
+            
+            });
+        }); 
+        $("#getpatientinfosbutton").click(function(){
+            patientaddress = $('#getpatientinfosaddress').val();
+            contract1.methods.getPatient(patientaddress).call().then(function(result){ 
+                
+                var code = '<table> <tr> <th>patient address</th> <th>patient name</th> <th>patient cin</th> <th>patient malade_name</th></tr> <tr> <td>'+result["patient_address"]+'</td> <td>'+result["name"]+'</td> <td>'+result["cin"]+'</td>  <td>'+result["malade_name"]+'</td></tr></table>' 
+                $("#result").html(code);
+            
+            });
+        }); 
+
+        $("#addprescriptionbutton").click(function(){
+            patientaddress = $('#patientaddressfordrug').val();
+            drugid = $('#drugid').val();
+            addPrescription(patientaddress ,drugid);
+          
+        }); 
+       function addDoctor(address , fullname , hospital , cin){
+        contract1.methods.addDoctor(address, fullname , hospital, cin).send({
+            from: this.web3.eth.defaultAccount,
+            gas: 3000000,
+            }).then(function(erreur , result){
+        alert(erreur);
+            });
+       }
+       function addPrescription(address , drugid){
+        contract1.methods.addPrescription(address, drugid).send({
+            from: this.web3.eth.defaultAccount,
+            gas: 3000000,
+            }).then(function(erreur , result){
+        alert(erreur);
+            });
+       }
+       function addPatient(address , fullname , cin , malade_name){
+        contract1.methods.addPatient(address, fullname , cin, malade_name).send({
+            from: this.web3.eth.defaultAccount,
+            gas: 3000000,
+            }).then(function(erreur , result){
+        console.log(erreur);
+            });
+       }
+       function gatetable(from , to , drug_title){
+           return ' <tr> <td>'+from+'</td> <td>'+to+'</td> <td>'+drug_title+'</td>  <td>'+result["malade_name"]+'</td></tr>'; 
+             
+       }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
